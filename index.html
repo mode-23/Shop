@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+      integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/shop.png"
+      sizes="196 x 196"
+    />
+    <script src="JS/script.js" defer></script>
+    <title>Shopping Cart</title>
+  </head>
+  <body class="body">
+    <header class="header">
+      <div class="container">
+        <div class="part-1 part">
+          <a href="index.html" class="logo">Mode<span>fy</span></a>
+          <ul class="main">
+            <li class="active">home</li>
+            <li>clothes</li>
+            <li>computers</li>
+            <li>phones</li>
+          </ul>
+        </div>
+        <div class="part-2 part">
+          <div class="search">
+            <input
+              type="search"
+              id="search"
+              placeholder="Got something in mind?"
+            />
+            <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
+            <i class="fa-solid fa-magnifying-glass" id="searchExtra"></i>
+          </div>
+          <div class="cart">
+            <span class="numberOfProducts">0</span>
+            <i class="fa-solid fa-bag-shopping" id="cart"></i>
+            <h5></h5>
+          </div>
+          <div class="cart" id="fav">
+            <h3 class="price-out">Empty</h3>
+          </div>
+          <!-- <i class="fa-solid fa-heart"></i> -->
+        </div>
+        <div class="toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="inner-cart">
+        <i class="fa-solid fa-xmark" id="close-cart"></i>
+        <h3 class="total-all">
+          Total: <span class="total-price">$0</span
+          ><button class="purchase">Purchase</button>
+        </h3>
+        <div class="cart-box-holder">
+          <!-- <div class="cart-box">
+                    <div class="cart-img">
+                        <img src="images/artem-bondarchuk-XPBYi4K8vFI-unsplash.jpg" >
+                    </div>
+                    <h4 class="title-cart">Nike 1</h4>
+                    <p class="price-cart">$6.80</p>
+                    <input type="number" class="count-cart" value="1">
+                    <span class="remove-cart"><i class="fa-solid fa-trash btnDelete"></i></span>
+                </div>
+                <div class="cart-box">
+                    <div class="cart-img">
+                        <img src="images/artem-bondarchuk-XPBYi4K8vFI-unsplash.jpg" >
+                    </div>
+                    <h4 class="title-cart">Nike 1</h4>
+                    <p class="price-cart">$2.20</p>
+                    <input type="number" class="count-cart" value="1">
+                    <span class="remove-cart"><i class="fa-solid fa-trash btnDelete"></i></span>
+                </div>
+                <div class="cart-box">
+                    <div class="cart-img">
+                        <img src="images/artem-bondarchuk-XPBYi4K8vFI-unsplash.jpg" >
+                    </div>
+                    <h4 class="title-cart">Nike 1</h4>
+                    <p class="price-cart">$4.50</p>
+                    <input type="number" class="count-cart" value="1">
+                    <span class="remove-cart"><i class="fa-solid fa-trash btnDelete"></i></span>
+                </div> -->
+        </div>
+      </div>
+    </header>
+    <!-- <section class="landing">
+        <div class="container">
+            <i class="fa-solid fa-angle-left" id="prev"></i>
+            <i class="fa-solid fa-angle-right" id="next"></i>
+            <div class="img-holder">
+                <img src="images/revolt-164_6wVEHfI-unsplash.jpg" alt="" class="img">
+                <img src="images/artem-bondarchuk-XPBYi4K8vFI-unsplash.jpg" alt="">
+                <img src="images/maksim-larin-1vy2QcZd5FU-unsplash.jpg" alt="">
+                <img src="images/usama-akram-kP6knT7tjn4-unsplash.jpg" alt="">
+            </div>
+        </div>
+    </section> -->
+    <!-- <section class="home">
+      <div class="container">
+        <div class="home-holder">
+          <div class="one boxContent"><img src="images/lap3.jpg" alt="" /></div>
+          <div class="two boxContent"><img src="images/s2.jpg" alt="" /></div>
+          <div class="three boxContent">
+            <img src="images/phone2.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <section class="homePage">
+        <div class="container">
+        <div class="partHolder">
+            <div class="leftPart">
+                <ul class="drop">
+                    <li class="active">Categories</li>
+                    <li class="li droping">desktop<i class="fa-solid fa-angle-down" id="iconof"></i></li>
+                    <ul class="innerDrop">
+                        <li>computer</li>
+                        <li>laptop</li>
+                        <li>mouse</li>
+                        <li>keyboard</li>
+                        <li>headset</li>
+                    </ul>
+                    <li class="li">Clothes</li>
+                    <li class="li">sneakers</li>
+                    <li class="li">phones</li>
+                    <li class="li">vehiculs</li>
+                    <li class="li">websites</li>
+                    </ul>
+            </div>
+            <div class="rightPart">
+              <div class="filter">
+                <div class="filterButtons">
+                <i class="fa-brands fa-microsoft active" id="comFilter" title="Roomy"></i>
+                <i class="fa-solid fa-list" id="listFilter" title="Cheatsheet"></i>
+              </div>
+              <div class="logingRegistre filterButtons">
+                <i class="fa-solid fa-arrow-right-to-bracket" title="Registre"></i>
+                <i class="fa-solid fa-user" title="Login"></i>
+                <span class="mood" title="DARKMOOD"></span>
+              </div>
+              </div>
+              <div class="bottomFilter">
+                <div class="arrowFilter">
+                  <i class="fa-solid fa-angle-left" id="prevFilter"></i>
+                  <i class="fa-solid fa-angle-right" id="nextFilter"></i>
+                </div>
+                <div class="filterImg">
+                  <img src="images/s4.jpg" id="filterImgs">
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="products">
+      <!-- <div class="categories container">
+        <div class="cateBox">
+            <i class="fa-brands fa-shopify"></i>
+            <h3>all</h3>
+            <span id="allpr"></span>
+        </div>
+        <div class="cateBox">
+            <i class="fa-solid fa-shirt"></i>
+            <h3>clothes</h3>
+            <span id="cl"></span>
+        </div>
+        <div class="cateBox">
+            <i class="fa-solid fa-mobile-screen"></i>
+            <h3>phones</h3>
+            <span id="ph"></span>
+        </div>
+        <div class="cateBox">
+            <i class="fa-solid fa-display"></i>
+            <h3>computers</h3>
+            <span id="pc"></span>
+        </div>
+      </div> -->
+      <div class="container">
+        <h1 class="categoryTitle">HOT PRODUCTS</h1>
+        <div class="box-holder">
+          <div class="box cartShop cl">
+            <img src="images/s1.jpg" class="shopImg" />
+            <h4 class="title">Smartknee</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="buyItem">
+              <a class="btn addtoCart">add in cart</a>
+            <p class="price">159.99</p>
+            </div>
+            <span class="new-div">new</span>
+          </div>
+          <div class="box cartShop cl">
+            <img src="images/s2.jpg" class="shopImg" />
+            <h4 class="title">adidas fullstack</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="buyItem">
+              <a class="btn addtoCart">add in cart</a>
+            <p class="price">130.99</p>
+            </div>
+            <span class="new-div">new</span>
+          </div>
+          <div class="box cartShop cl">
+            <img src="images/s3.jpg" class="shopImg" />
+            <h4 class="title">air jordan</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="buyItem">
+              <a class="btn addtoCart">add in cart</a>
+            <p class="price">249.99</p>
+            </div>
+            <span class="new-div">new</span>
+          </div>
+          <div class="box cartShop cl">
+            <img src="images/s4.jpg" class="shopImg" />
+            <h4 class="title">Nike'Arash</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="buyItem">
+              <a class="btn addtoCart">add in cart</a>
+            <p class="price">30.99</p>
+            </div>
+            <span class="new-div">new</span>
+          </div>
+          <div class="box cartShop pcs">
+            <img src="images/pc1.jpg" class="shopImg" />
+            <h4 class="title">belli coup</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="buyItem">
+              <a class="btn addtoCart">add in cart</a>
+            <p class="price">3000.20</p>
+            </div>
+            <span class="new-div">new</span>
+          </div>
+          <div class="box cartShop pcs">
+            <img src="images/pc2.webp" class="shopImg" />
+            <h4 class="title">double vegas</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="buyItem">
+              <a class="btn addtoCart">add in cart</a>
+            <p class="price">3999.99</p>
+            </div>
+            <span class="new-div">new</span>
+          </div>
+          <div class="box cartShop pcs">
+            <img src="images/pc3.jpg" class="shopImg" />
+            <h4 class="title">integrate vegas</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="buyItem">
+              <a class="btn addtoCart">add in cart</a>
+            <p class="price">4250.20</p>
+            </div>
+            <span class="new-div">new</span>
+          </div>
+          <div class="box cartShop pcs">
+            <img src="images/pc4.avif" class="shopImg" />
+            <h4 class="title">newbes vgod</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="buyItem">
+              <a class="btn addtoCart">add in cart</a>
+            <p class="price">1700.00</p>
+            </div>
+            <span class="new-div">new</span>
+          </div>
+        </div>
+        <h1 class="categoryTitle">Clothes</h1>
+        <div class="box-holder">
+          <div class="box cartShop cl">
+            <img src="images/t1.jpg" class="shopImg" />
+            <h4 class="title">Stop breathing</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="buyItem">
+              <a class="btn addtoCart">add in cart</a>
+            <p class="price">199.99</p>
+            </div>
+          </div>
+          <div class="box cartShop cl">
+            <img src="images/t2.jpg" class="shopImg" />
+            <h4 class="title">hell cat</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="buyItem">
+              <a class="btn addtoCart">add in cart</a>
+            <p class="price">249.99</p>
+            </div>
+          </div>
+          <div class="box cartShop cl">
+            <img src="images/t3.jpg" class="shopImg" />
+            <h4 class="title">Summer Crem II</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="buyItem">
+              <a class="btn addtoCart">add in cart</a>
+            <p class="price">11.99</p>
+            </div>
+          </div>
+          <div class="box cartShop cl">
+            <img src="images/t4.jpg" class="shopImg" />
+            <h4 class="title">Summer Crem</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="buyItem">
+              <a class="btn addtoCart">add in cart</a>
+            <p class="price">9.99</p>
+            </div>
+          </div>
+        </div>
+        <h1 class="categoryTitle">Phones</h1>
+        <div class="box-holder">
+          <div class="box cartShop ph">
+            <img src="images/phone1.jpg" class="shopImg" />
+            <h4 class="title">Huwawei 3310</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="buyItem">
+              <a class="btn addtoCart">add in cart</a>
+            <p class="price">519.99</p>
+            </div>
+          </div>
+          <div class="box cartShop ph">
+            <img src="images/phone2.jpg" class="shopImg" />
+            <h4 class="title">Iphone 2019 pro</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="buyItem">
+              <a class="btn addtoCart">add in cart</a>
+            <p class="price">649.99</p>
+            </div>
+          </div>
+          <div class="box cartShop ph">
+            <img src="images/phone3.jpg" class="shopImg" />
+            <h4 class="title">Redmi 9</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="buyItem">
+              <a class="btn addtoCart">add in cart</a>
+            <p class="price">780.50</p>
+            </div>
+          </div>
+          <div class="box cartShop ph">
+            <img src="images/phone4.webp" class="shopImg" />
+            <h4 class="title">Nokia TI</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="buyItem">
+              <a class="btn addtoCart">add in cart</a>
+            <p class="price">218.50</p>
+            </div>
+          </div>
+        </div>
+        <h1 class="categoryTitle">Computers</h1>
+        <div class="box-holder">
+          <div class="box cartShop pcs">
+            <img src="images/pc1.jpg" class="shopImg" />
+            <h4 class="title">Opera Gravity</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="buyItem">
+              <a class="btn addtoCart">add in cart</a>
+              <p class="price">4499.99</p>
+            </div>
+          </div>
+          <div class="box cartShop pcs">
+            <img src="images/pc2.webp" class="shopImg" />
+            <h4 class="title">FireFox pro-max</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="buyItem">
+              <a class="btn addtoCart">add in cart</a>
+              <p class="price">3499.99</p>
+            </div>
+          </div>
+          <div class="box cartShop pcs">
+            <img src="images/pc3.jpg" class="shopImg" />
+            <h4 class="title">i feel like pablo</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="buyItem">
+              <a class="btn addtoCart">add in cart</a>
+              <p class="price">500.99</p>
+            </div>
+          </div>
+          <div class="box cartShop pcs">
+            <img src="images/pc4.avif" class="shopImg" />
+            <h4 class="title">GX Tforce</h4>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <div class="buyItem">
+              <a class="btn addtoCart">add in cart</a>
+              <p class="price">9999.99</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="scrollTotop">
+      <i class="fa-solid fa-angle-up"></i>
+    </div>
+    <div class="alert">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <p>This item is already in your cart!</p>
+      <i class="fa-solid fa-xmark" id="closeAlert"></i>
+    </div>
+    <!-- <div class="added">
+        <i class="fa-solid fa-circle-check"></i>
+        <p>Item addedd to your cart succesufully!</p>
+        <i class="fa-solid fa-xmark" id="closeadded"></i>
+      </div> -->
+      <div class="preload">
+        <img src="images/animation.gif" alt="">
+      </div>
+  </body>
+</html>
